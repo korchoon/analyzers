@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <PackageTargetFallback>portable-net45+win8+wp8+wpa81</PackageTargetFallback>
+    <AssemblyName>RoslynAnalyzers</AssemblyName>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <Company></Company>
+    <Product></Product>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <PackageId>Roslyn.Analyzers</PackageId>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Title>C# Analyzers</Title>
+    <Authors></Authors>
+    <Owners>Eduardo Serrano</Owners>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <Description></Description>
+    <PackageTags></PackageTags>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    
+    <!--<RepositoryUrl>https://github.com/edumserrano/roslyn-analyzers</RepositoryUrl>-->
+    <!--<PackageIconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</PackageIconUrl>-->
+    <!--<PackageReleaseNotes>Summary of changes made in this release of the package.</PackageReleaseNotes>-->
+    <!--<Copyright>Copyright</Copyright>-->
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath></OutputPath>
+    <WarningsAsErrors />
+    <NoWarn />
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <WarningsAsErrors />
+    <NoWarn />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.2.0" PrivateAssets="all" />
+    <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tools\*.ps1" CopyToOutputDirectory="Always" Pack="true" PackagePath="tools" />
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="RefReturnAnalyzer.cs" />
+  </ItemGroup>
+
+</Project>
