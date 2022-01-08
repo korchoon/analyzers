@@ -1,0 +1,2 @@
+-a:"Analyzers/bin/debug/netstandard1.3/RoslynAnalyzers.dll" 
+-ruleset:"Assets/Analyzers.ruleset"

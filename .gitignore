@@ -1,6 +1,10 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
+/Layouts/
+/UserSettings/
 /Logs/
 .vs/
 .idea/
+/*.csproj
+/*.sln
